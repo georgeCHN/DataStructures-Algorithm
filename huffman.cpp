@@ -15,8 +15,8 @@ int length = 0;//txt文本共有多少个节点
 int length1 = 0;//sw数组中共有多少个不同的字符
 word sw[128];//统计权值与字符
 int databuff[1000];//原始统计
-#define leafnumber 43
-#define totalnumber 43*2-1
+#define leafnumber 37
+#define totalnumber leafnumber*2-1
 #define maxValue 1000
 typedef struct {
 	char data;
