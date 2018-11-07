@@ -65,6 +65,7 @@ public:
 	}
 	void insert(const E& it) {
 		curr->next = new Link<E>(it, curr->next);
+		cnt++;
 	}
 	void append(const E&it) {
 		tail = tail->next = new Link<E>(it, NULL);
