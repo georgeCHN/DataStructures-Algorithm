@@ -65,6 +65,7 @@ public:
 	}
 	void insert(const E& it) {
 		curr->next = new Link<E>(it, curr->next);
+		cnt++;
 	}
 	void append(const E&it) {
 		tail = tail->next = new Link<E>(it, NULL);
@@ -78,6 +79,9 @@ public:
 		}
 		E it = curr->next->element;
 		Link<E>* temp = curr->next;
+		//delete tail node
+		if(curr->next==tail)
+			tail=curr;
 		curr->next = curr->next->next;
 		delete temp;
 		cnt--;
