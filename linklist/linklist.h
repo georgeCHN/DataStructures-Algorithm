@@ -79,6 +79,9 @@ public:
 		}
 		E it = curr->next->element;
 		Link<E>* temp = curr->next;
+		//delete tail node
+		if(curr->next==tail)
+			tail=curr;
 		curr->next = curr->next->next;
 		delete temp;
 		cnt--;
