@@ -15,4 +15,4 @@
 + Prim算法  
 + Kruskal算法  
   
-<a href="https://geogechou.github.io/DataStructures-Algorithm/">静态网站</a>
+<a href="https://geogechou.github.io/DataStructures-Algorithm/">项目简介</a>
