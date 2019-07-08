@@ -1,3 +1,4 @@
+//模板类的声明和实现需要在h文件中完成，不能分离到c文件中实现
 #pragma once
 #include<iostream>
 using namespace std;
