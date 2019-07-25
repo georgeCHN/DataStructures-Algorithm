@@ -1,5 +1,5 @@
 # DataStructures-Algorithm
-### 常用数据结构的实现
+### 顺序表
 ### 链表
 ### 队列、栈
 ### 二叉树
