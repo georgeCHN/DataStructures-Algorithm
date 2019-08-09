@@ -1,7 +1,7 @@
-#include "pch.h"
-#include"linklist.h"
-#include "listApp.h"
-#include"test.h"
+#include"../include/linklist.h"
+#include "../include/listApp.h"
+#include "../include/my_bool.h"
+#include "test.h"
 #include<stdio.h>
 
 void test(LinkList list)
@@ -13,10 +13,10 @@ void test(LinkList list)
 	while (true) {
 		int v;
 		printf("enter value:");
-		scanf_s("%d", &v);
+		scanf("%d", &v);
 		int p;
 		printf("enter position:");
-		scanf_s("%d", &p);
+		scanf("%d", &p);
 		list_insert(list, p, v);
 		list_print(list);
 	}

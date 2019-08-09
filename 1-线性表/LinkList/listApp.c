@@ -1,16 +1,17 @@
-#include"pch.h"
-#include"listApp.h"
-#include"linklist.h"
+#include"include/listApp.h"
+#include"include/linklist.h"
 #include<stdio.h>
 #include<string.h>
 #include<math.h>
+#include <stdlib.h>
+
 LinkList list_delete_x(LinkList list, int x)
 {
 	if (!list) return NULL;
 	if (list->data == x) {
 		LNode* tmp = list;
 		list = list->next;
-		delete tmp;
+		free(tmp);
 		list=list_delete_x(list, x);
 	}
 	else
@@ -25,7 +26,7 @@ void list_delete_x_NonRecursion(LinkList list, int x)
 		if (tmp->next->data == x) {
 			LNode* del = tmp->next;
 			tmp->next = tmp->next->next;
-			delete del;
+			free(del);
 		}else
 			tmp = tmp->next;
 	}
@@ -77,7 +78,7 @@ void list_delete_min(LinkList list)
 	LNode* bedel = minPrev->next;
 	minPrev->next = minPrev->next->next;
 	//printf("min:%d->\n", min);
-	delete bedel;
+	free(bedel);
 
 }
 void list_insert_as_sorted(LinkList list, LNode* node)
@@ -127,7 +128,7 @@ void list_delete_range(LinkList list, int i, int j)
 		if (list->next->data <= j && list->next->data >= i) {
 			LNode* tmp = list->next;
 			list->next = list->next->next;
-			delete tmp;
+			free(tmp);
 		}
 		else
 			list = list->next;
@@ -150,7 +151,7 @@ LinkList list_comm(LinkList a, LinkList b)
 		a = a->next;
 		b = b->next;
 	}
-	LNode* head = new LNode;
+	LNode* head = (LNode*)malloc(sizeof(LNode));
 	head->next = a;
 	return head;
 }
@@ -187,7 +188,7 @@ void list_remove_duplicated(LinkList list)
 		if (list->data == list->next->data) {
 			LNode* tmp = list->next;
 			list->next = list->next->next;
-			delete tmp;
+			free(tmp);
 		}
 		else
 			list = list->next;
@@ -258,18 +259,18 @@ void list_interaction(LinkList a, LinkList b)
 		if (a->next->data > b->data) {
 			LNode* tmp = b;
 			b = b->next;
-			delete tmp;
+			free(tmp);
 		}
 		else if (a->next->data < b->data) {
 			LNode* tmp = a->next;
 			a->next = a->next->next;
-			delete tmp;
+			free(tmp);
 		}
 		else {
 			a = a->next;
 			LNode* tmp = b;
 			b = b->next;
-			delete tmp;
+			free(tmp);
 		}
 	}
 	
@@ -279,12 +280,12 @@ void list_interaction(LinkList a, LinkList b)
 	while (a) {//清除余下的节点
 		LNode* tmp = a;
 		a = a->next;
-		delete tmp;
+		free(tmp);
 	}
 	while (b) {//清除余下的节点
 		LNode* tmp = b;
 		b = b->next;
-		delete tmp;
+		free(tmp);
 	}
 }
 bool list_is_subsequence(LinkList a, LinkList b)
@@ -333,7 +334,7 @@ void list_408_remove_duplicate(LinkList list,int n)
 {
 	//题目给出了所有元素不会大于n，所以用哈希表来映射位置
 	if (!list) return;
-	bool* flags = new bool[n+1];//|data|<=n
+	bool* flags = (bool*)malloc(sizeof(bool)*(n+1));//|data|<=n
 	//printf("sizeof is:%d\n", (n+1)*(sizeof false));
 	memset(flags, false, (n + 1)*(sizeof false));
 	while (list->next){
@@ -341,7 +342,7 @@ void list_408_remove_duplicate(LinkList list,int n)
 		if(flags[i]){
 			LNode* tmp = list->next;
 			list->next = list->next->next;
-			delete tmp;
+			free(tmp);
 		}
 		else {
 			list = list->next;//一定要在不删除的情况下移动指针，任何情况都移动指针会漏掉某些元素

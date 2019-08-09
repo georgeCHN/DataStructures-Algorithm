@@ -1,6 +1,8 @@
 #pragma once
 #ifndef LISTAPP_H_
 #define LISTAPP_H_
+
+#include "my_bool.h"
 #include "linklist.h"
 //delete all of node that value equal x, use recurit
 extern LinkList list_delete_x(LinkList list, int x);

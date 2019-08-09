@@ -11,7 +11,7 @@ extern void list_append(LinkList list, int v);
 //print list
 extern void list_print(LinkList list);
 //init a linklist, return a head node
-extern LinkList list_init(void);
+extern LinkList list_init();
 //return node by index, the range of index between 1 and list's length
 extern LNode* list_getElement(LinkList list, int index);
 //delete a node in list, by index that range between 1 and list's length
