@@ -1,5 +1,4 @@
-#include"pch.h"
-#include"list.h"
+#include"../include/list.h"
 #include "listTest.h"
 
 void test_408(void)

@@ -1,4 +1,3 @@
-#pragma once
 # ifndef listTest_H
 #define listTest_H
 //test case

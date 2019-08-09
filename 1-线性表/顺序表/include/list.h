@@ -1,5 +1,7 @@
-#pragma once
+//#pragma once
 #include<stdio.h>
+#include<stdlib.h>
+#include "my_bool.h"
 #ifndef LIST_H
 #define LIST_H
 

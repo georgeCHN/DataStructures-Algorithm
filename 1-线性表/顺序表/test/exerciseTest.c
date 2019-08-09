@@ -1,11 +1,9 @@
 // 顺序表.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
-
-#include "pch.h"
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-#include "list.h"
+#include "../include/list.h"
 int cmp(const void *a, const void *b)
 {
 	return *(int *)a - *(int *)b;

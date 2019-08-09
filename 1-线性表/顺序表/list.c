@@ -1,12 +1,11 @@
-#include "pch.h"
 #include<stdio.h>
-#include"list.h"
+#include"include/list.h"
 
 //enter maxSize, return a list
 List* initList(int maxSize)
 {
-	List* list = new List;
-	list->data = new int[maxSize];
+	List* list = (List*)malloc(sizeof(List));
+	list->data = (int*)malloc(sizeof(int)*maxSize);
 	list->maxSize = maxSize;
 	list->length = 0;
 	return list;

@@ -1,6 +1,4 @@
-#include "pch.h"
-#include"list.h"
-
+#include"include/list.h"
 /*
 删除顺序表中最小的元素，空出的位置由最后一个元素填补
 */

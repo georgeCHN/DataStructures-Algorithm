@@ -1,5 +1,5 @@
-#include"pch.h"
-#include"list.h"
+#include <limits.h>
+#include "include/list.h"
 void swap(int nums[], int i, int j)
 {
 	int tmp = nums[i];
@@ -48,7 +48,7 @@ void circulatShift(int nums[], int len, int p)
 //the solving way use merge thought
 int findMidNum(int a[], int len1, int b[], int len2)
 {
-	if (a == NULL || b == NULL) return NULL; 
+	if (a == NULL || b == NULL) return INT_MAX;
 	if (len1 == 0) return b[len2 / 2];
 	if (len2 == 0) return a[len1 / 2];
 	int mid = (len1 + len2-1) / 2;
