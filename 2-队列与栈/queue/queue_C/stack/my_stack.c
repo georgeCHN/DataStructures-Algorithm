@@ -32,3 +32,8 @@ bool stack_is_empty(my_stack_t*stack)
     if(stack==NULL) return true;
     return stack->top==-1;
 }
+void stack_top(my_stack_t* stack,int *data)
+{
+    if(stack->top>-1)
+        *data=stack->data[stack->top];
+}
