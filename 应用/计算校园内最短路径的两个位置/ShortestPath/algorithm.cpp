@@ -22,7 +22,7 @@ int minVertex(Graphm*G,int*D) {
 //参数为图,距离数组，源点，终点，路径数组
 void Dijkstra(Graphm*G, int*D, int s,int d,int root[]) {
     //初始化路径,所有点的父节点设置为-1，即不可到达
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < G->n(); i++)
         root[i] = -1;
     //初始化距离，使s到自身的距离为0，其余为MAX
     //int vertexNum = G->getNumVertex();
