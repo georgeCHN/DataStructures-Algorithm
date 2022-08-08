@@ -18,7 +18,7 @@ public class MergeSort {
                 A[k]=temp[j++];
             else if(j>hi)
                 A[k]=temp[i++];
-            else if(A[i]<A[j])
+            else if(temp[i]<temp[j])
                 A[k]=temp[i++];
             else
                 A[k]=temp[j++];
